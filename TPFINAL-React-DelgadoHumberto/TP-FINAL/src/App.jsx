@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import { Container } from 'react-bootstrap'
+import Login from "./pages/Login"
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
             <Route path="/servicios" element={<Servicios/>}/>
 
             <Route path="/productos" element={<Productos/>}/>
-
+            <Route path="/login"     element={<Login/>}>  </Route>
              <Route path="/carrito" element={<Carrito/>}/>
           </Routes>
           
