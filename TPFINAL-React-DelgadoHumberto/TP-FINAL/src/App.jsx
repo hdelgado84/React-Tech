@@ -9,6 +9,8 @@ import Carrito from "./pages/Carrito"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { CarritoProvider } from "./context/CarritoContext";
+
 
 import { Container } from 'react-bootstrap'
 import Login from "./pages/Login"
@@ -20,6 +22,7 @@ function App() {
 
      <Router>
         <Header/>
+          
           <Container>
           <Routes>
             <Route path="/" element={<Home/>}/>
@@ -30,10 +33,11 @@ function App() {
 
             <Route path="/productos" element={<Productos/>}/>
             <Route path="/login"     element={<Login/>}>  </Route>
-             <Route path="/carrito" element={<Carrito/>}/>
+             <Route path="/carrito" element={<CarritoProvider><Carrito/></CarritoProvider>}/>
           </Routes>
           
           </Container>
+        
         <Footer/>
      </Router>
   )

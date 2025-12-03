@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Gallery from "../components/Gallery";
 
 import Container from 'react-bootstrap/Container';
@@ -7,9 +7,17 @@ import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 
 
+
+
+import { CarritoContext } from "../context/CarritoContext";
+
+
+
 export default function Productos(){
 
     const [producto, setProductos]=useState(null);
+
+   // const {carrito,agregarCarrito} = useContext(CarritoContext);
 
     useEffect(()=>{
 
@@ -34,6 +42,7 @@ export default function Productos(){
                                                        id={pro.id} 
                                                        price={pro.price}
                                                        articles={pro.articles}
+                                                       //onAdd={agregarCarrito}
                                                        /> </Col>));
       
     
@@ -47,8 +56,8 @@ export default function Productos(){
      //   console.log("tipo de dato Articulo ",typeof articulos);
    
 
-   var col = 4;  
-   var r=0;
+   let col = 4;  // defino el numero de columnas
+   let r=0;
    const resto=(size%col);
    if(resto)
     {
@@ -62,38 +71,26 @@ export default function Productos(){
 
     
 
-     console.log("filas", r);
     
     const prueba = ( )=>{
-        
-        
-        
-        var data2=[];
-
+                
+        let data2=[];
         let a = new Array(col);
+
         for (let fila = 0; fila < r; fila++) 
         {
-             a[fila] = new Array(col);
-            
+            a[fila] = new Array(col);            
             for (let c = 0; c < col; c++) 
             {
-            
-
-            a[fila][c] = articulos[c+(fila*col)];
+                a[fila][c] = articulos[c+(fila*col)];            
             }
-             data2.push(Object.assign({}, <Row md={4}> {a[fila]}</Row>) );
+            data2.push(Object.assign({}, <Row md={4}> {a[fila]}</Row>) );
         }    
-
-        return( data2);
-    
+        return(data2);    
         }
-
-    return(
-       
-        <Container>
-        
-             {prueba()}
-     
+    return(       
+        <Container>        
+            {prueba()}     
         </Container>
  
     );

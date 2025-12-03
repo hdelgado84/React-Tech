@@ -15,7 +15,7 @@ return(
                 <Card.Body>
                   <Card.Title>ID: {props.id}</Card.Title>
                   <Card.Text>Imagen {props.articles}</Card.Text>
-                  <Button variant="primary">Añadir +</Button>
+                  <Button variant="primary" onClick={()=>(alert("boton"))}>Añadir +</Button>
                 </Card.Body>
               </Card>
           
