@@ -19,27 +19,31 @@ function App() {
 
 
   return (
-
+     <CarritoProvider>
      <Router>
+        <Container>
         <Header/>
           
-          <Container>
+          
           <Routes>
             <Route path="/" element={<Home/>}/>
 
             <Route path="/contactos" element={<Contactos/>}/>
 
             <Route path="/servicios" element={<Servicios/>}/>
-
-            <Route path="/productos" element={<Productos/>}/>
-            <Route path="/login"     element={<Login/>}>  </Route>
-             <Route path="/carrito" element={<CarritoProvider><Carrito/></CarritoProvider>}/>
+            
+              <Route path="/productos" element={<Productos/>}/>
+              <Route path="/login"     element={<Login/>}>  </Route>
+              <Route path="/carrito" element={<Carrito/>}/>
+            
           </Routes>
           
-          </Container>
+          
         
         <Footer/>
+        </Container>
      </Router>
+     </CarritoProvider>
   )
 }
 

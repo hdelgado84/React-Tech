@@ -14,7 +14,9 @@ export const CarritoProvider=({children})=>{
     /* agrega elemenos al carrito */
     const agregarCarrito = (producto)=>{
 
-        setCarrito([...carrito, producto])
+        setCarrito([ ...carrito,producto]);
+        alert("dentro de contex");
+        console.log(carrito);
     }
 
     /* elimina  elementos al carrito */
@@ -31,20 +33,7 @@ export const CarritoProvider=({children})=>{
         setCarrito([]);
         
     }
-/*
-const fetchRamdomUser=()=>{
 
-    fetch('https://randomuser.me/api')
-        .then(res=>res.json()) //convierto a json
-        .then(data=>setUser(data.results[0]))// tengo que poner el[0] porque no es un array
-        .catch(error=>console.error('Error al cargar usuario',error));  //results es la key del json                       
-    }
-
-useEffect(()=>{
-
-    fetchRamdomUser();
-},[]);
-*/
 
 
 return(

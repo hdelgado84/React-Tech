@@ -17,7 +17,7 @@ export default function Productos(){
 
     const [producto, setProductos]=useState(null);
 
-   // const {carrito,agregarCarrito} = useContext(CarritoContext);
+    const {carrito,agregarCarrito} = useContext(CarritoContext);
 
     useEffect(()=>{
 
@@ -37,12 +37,17 @@ export default function Productos(){
         );
     }
 
+    function agregar(item)
+    {
+        alert('item agregado ');
+        agregarCarrito(item);
+    }
 
     const articulos= producto.map((pro) => ( <Col> <Gallery  image= {pro.image} 
                                                        id={pro.id} 
                                                        price={pro.price}
                                                        articles={pro.articles}
-                                                       //onAdd={agregarCarrito}
+                                                       onAdd={agregar}
                                                        /> </Col>));
       
     

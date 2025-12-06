@@ -13,7 +13,7 @@ export default function Carrito(){
     const {carrito} = useContext(CarritoContext);
 
   
-
+    console.log("dentro de carrito", carrito);
 
   
     return(
@@ -22,13 +22,13 @@ export default function Carrito(){
 
             {
             
-            (carrito.lenght > 0) > 0 ?
+            (carrito.length > 0) ?
             (<ol>
-               { carrito.map((item,index)=>{
+               { carrito.map((value, index)=>(
             
-                <li key={index}>{item.articles}</li>
+                <li key={index}><p> item carrito agregado {value}</p></li>
 
-                })}
+                ))}
             </ol> ):(<p> Carrito está vacio </p>)
             
             

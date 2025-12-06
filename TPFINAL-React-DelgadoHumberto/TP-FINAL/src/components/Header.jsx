@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useContext} from "react";
 import {Container, Navbar, Nav, NavbarBrand} from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -6,11 +6,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
+import { CarritoContext } from "../context/CarritoContext"
+
+
 
 function Header(){
 
 
-    var dato=  451;
+    var dato= 0;
+    const {carrito} = useContext(CarritoContext);
+    dato = carrito.length;
 
 return(
 
