@@ -50,18 +50,22 @@ export default function Productos(){
                                                        onAdd={agregar}
                                                        /> </Col>));
       
-    
-  
-
-    const size = articulos.length;
-    
-    console.log("tamaño", size);
- 
  
      //   console.log("tipo de dato Articulo ",typeof articulos);
    
+    /*
+        Armo la grilla de productos, defino una cantidad de columna fijas y la cantidad de filas es 
+        variables según la cantidad de productos.
+    */
+    
+    const size = articulos.length;
+    const COLUMNAS = 4;
 
-   let col = 4;  // defino el numero de columnas
+    console.log("tamaño", size);
+ 
+    //console.log("tipo de dato Articulo ",typeof articulos);
+
+   let col = COLUMNAS;  // defino el numero de columnas
    let r=0;
    const resto=(size%col);
    if(resto)
